@@ -13,7 +13,7 @@ int primenumber(int n){
     if (n % 2 == 0)
         return 0;
 
-    for (int i = 3; i < (sqrt(n) + 1); i += 2)
+    for (int i = 3; i * i < n; i += 2)
         {
             if (n % i == 0)
             {
@@ -31,7 +31,10 @@ int main(){
     printf("Введите значение n: ");
     scanf("%d", &n);
 
-    int m = primenumber(n);
-    printf("%d", m);
+    for (int i = 0; i < n; i++)
+    {
+        if (primenumber(i) == 1)
+        printf("%d\n", i);
+    }
 
 }
